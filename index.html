@@ -36,7 +36,6 @@
     cursor: none;
   }
 
-  /* CUSTOM CURSOR */
   .cursor {
     position: fixed;
     width: 6px; height: 6px;
@@ -60,7 +59,6 @@
   }
   .cursor-ring.hover { width: 60px; height: 60px; transform: translate(-27px, -27px); opacity: 0.6; }
 
-  /* SCANLINES */
   body::before {
     content: '';
     position: fixed;
@@ -72,7 +70,6 @@
   }
   @keyframes scanMove { from { background-position: 0 0; } to { background-position: 0 100px; } }
 
-  /* NOISE OVERLAY */
   body::after {
     content: '';
     position: fixed;
@@ -85,7 +82,6 @@
     background-size: 128px;
   }
 
-  /* GRID BG */
   .grid-bg {
     position: fixed;
     inset: 0;
@@ -97,7 +93,6 @@
     z-index: 0;
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -151,10 +146,8 @@
   }
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.7)} }
 
-  /* MAIN WRAPPER */
   main { position: relative; z-index: 1; }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -359,7 +352,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* SCROLL LINE */
   .scroll-indicator {
     position: absolute;
     bottom: 40px;
@@ -386,7 +378,6 @@
     writing-mode: vertical-lr;
   }
 
-  /* SECTION COMMON */
   section { padding: 120px 60px; position: relative; }
   .section-header {
     display: flex;
@@ -413,7 +404,6 @@
     background: linear-gradient(to right, var(--border), transparent);
   }
 
-  /* PROJECTS */
   #projects { border-top: 1px solid var(--border); }
 
   .projects-grid {
@@ -502,7 +492,6 @@
     transition: transform 0.3s;
   }
 
-  /* SKILLS */
   #skills { border-top: 1px solid var(--border); background: var(--dark2); }
 
   .skills-layout {
@@ -602,7 +591,6 @@
     letter-spacing: 2px;
   }
 
-  /* TIMELINE */
   #timeline { border-top: 1px solid var(--border); }
 
   .timeline { position: relative; padding-left: 40px; }
@@ -655,7 +643,6 @@
     font-weight: 300;
   }
 
-  /* CONTACT */
   #contact {
     border-top: 1px solid var(--border);
     background: var(--dark2);
@@ -724,7 +711,6 @@
   }
   .contact-link:hover .link-arrow { opacity: 1; transform: translateX(0); }
 
-  /* FOOTER */
   footer {
     padding: 40px 60px;
     border-top: 1px solid var(--border);
@@ -747,7 +733,6 @@
     letter-spacing: 2px;
   }
 
-  /* CORNER DECORATIONS */
   .corner-tl, .corner-br {
     position: absolute;
     width: 20px; height: 20px;
@@ -764,7 +749,6 @@
     border-right: 1px solid rgba(0,255,178,0.2);
   }
 
-  /* STATUS BAR */
   .status-bar {
     position: fixed;
     bottom: 0; left: 0; right: 0;
@@ -795,13 +779,11 @@
   }
   @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-  /* TERMINAL BLINK */
   .blink {
     animation: blink 1.2s step-end infinite;
   }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-  /* DATA COUNTER */
   .data-counter {
     position: absolute;
     top: 40px; right: 60px;
@@ -816,7 +798,6 @@
     letter-spacing: 2px;
   }
 
-  /* ABOUT SECTION */
   #about { border-top: 1px solid var(--border); }
   .about-layout {
     display: grid;
@@ -923,7 +904,6 @@
 <div class="cursor-ring" id="cursorRing"></div>
 <div class="grid-bg"></div>
 
-<!-- NAV -->
 <nav>
   <div class="logo">LV<span>::</span>2126</div>
   <ul>
@@ -939,7 +919,6 @@
   </div>
 </nav>
 
-<!-- STATUS BAR -->
 <div class="status-bar">
   <div class="status-ticker">
     <div class="status-item">SYN_CLOCK <span id="clock">00:00:00</span></div>
@@ -961,7 +940,6 @@
 
 <main>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="corner-tl"></div>
   <div class="corner-br"></div>
@@ -1014,7 +992,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-header">
     <span class="section-num">// 01</span>
@@ -1060,7 +1037,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-header">
     <span class="section-num">// 02</span>
@@ -1120,7 +1096,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
     <span class="section-num">// 03</span>
@@ -1204,7 +1179,6 @@
   </div>
 </section>
 
-<!-- TIMELINE -->
 <section id="timeline">
   <div class="section-header">
     <span class="section-num">// 04</span>
@@ -1239,7 +1213,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-header">
     <span class="section-num">// 05</span>
@@ -1296,7 +1269,6 @@
 </footer>
 
 <script>
-  // CURSOR
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -1318,7 +1290,6 @@
     el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
   });
 
-  // CLOCK
   function updateClock() {
     const now = new Date();
     const t = [now.getHours(), now.getMinutes(), now.getSeconds()].map(n => String(n).padStart(2,'0')).join(':');
@@ -1328,7 +1299,6 @@
   updateClock();
   setInterval(updateClock, 1000);
 
-  // SMOOTH NAV
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
