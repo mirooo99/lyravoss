@@ -1902,8 +1902,10 @@ document.addEventListener('mousemove', e => {
 function animRing() {
   rx += (mx - rx) * 0.12;
   ry += (my - ry) * 0.12;
-  ring.style.left = rx-18+'px';
-  ring.style.top = ry-18+'px';
+  const halfW = ring.offsetWidth / 2;
+  const halfH = ring.offsetHeight / 2;
+  ring.style.left = rx - halfW + 'px';
+  ring.style.top  = ry - halfH + 'px';
 
   trails.forEach((t, i) => {
     const pos = mouseHistory[i*2] || {x:mx,y:my};
