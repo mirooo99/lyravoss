@@ -25,7 +25,6 @@
     --glitch2: #00FFB2;
   }
 
-  /* LIGHT MODE */
   body.light-mode {
     --acid: #007A55;
     --acid2: #0070A0;
@@ -47,7 +46,6 @@
   }
   body.light-mode #rain-canvas { opacity: 0.05; }
 
-  /* Fix all text that hardcodes dark colors in light mode */
   body.light-mode .hero-desc { color: rgba(13,32,24,0.7); }
   body.light-mode .about-body { color: rgba(13,32,24,0.6); }
   body.light-mode .project-desc { color: rgba(13,32,24,0.6); }
@@ -107,7 +105,6 @@
   }
   * { cursor: none; }
 
-  /* SCROLL PROGRESS */
   #scroll-progress {
     position: fixed;
     top: 0; left: 0;
@@ -119,7 +116,6 @@
     box-shadow: 0 0 8px var(--acid);
   }
 
-  /* CURSOR */
   .cursor {
     position: fixed;
     width: 6px; height: 6px;
@@ -141,7 +137,6 @@
   }
   .cursor-ring.hover { width: 60px; height: 60px; opacity: 0.6; }
 
-  /* CURSOR TRAIL */
   .trail-dot {
     position: fixed;
     width: 4px; height: 4px;
@@ -154,7 +149,6 @@
     transition: opacity 0.1s;
   }
 
-  /* SCAN LINES */
   body::before {
     content: '';
     position: fixed;
@@ -189,7 +183,6 @@
     z-index: 0;
   }
 
-  /* RAIN CANVAS */
   #rain-canvas {
     position: fixed;
     inset: 0;
@@ -198,7 +191,6 @@
     opacity: 0.18;
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -251,7 +243,6 @@
   }
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.7)} }
 
-  /* MODE TOGGLE */
   #mode-toggle {
     font-family: 'Share Tech Mono', monospace;
     font-size: 9px;
@@ -268,7 +259,6 @@
 
   main { position: relative; z-index: 2; }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -359,7 +349,6 @@
     99%{opacity:0;transform:none}
   }
 
-  /* TYPING EFFECT */
   .hero-subtitle {
     font-family: 'Share Tech Mono', monospace;
     font-size: 13px;
@@ -492,7 +481,6 @@
   }
   .section-line { flex: 1; height: 1px; background: linear-gradient(to right, var(--border), transparent); }
 
-  /* ABOUT / ASCII PORTRAIT */
   #about { border-top: 1px solid var(--border); }
   .about-layout {
     display: grid;
@@ -582,7 +570,6 @@
   }
   .tag:hover { border-color: var(--acid); color: var(--acid); }
 
-  /* PROJECTS — EXPAND ON HOVER */
   #projects { border-top: 1px solid var(--border); }
   .projects-grid {
     display: grid;
@@ -604,7 +591,6 @@
   .project-card:hover .project-details { max-height: 200px; opacity: 1; margin-top: 16px; }
   .project-card:hover .project-name { color: var(--acid); }
 
-  /* GLITCH ON HOVER */
   .project-card:hover .project-glitch { animation: projectGlitch 0.4s steps(2) 1; }
   @keyframes projectGlitch {
     0%{clip-path:inset(0 0 95% 0);transform:translateX(-4px)}
@@ -666,7 +652,6 @@
     line-height: 1.7;
     font-weight: 300;
   }
-  /* Expanded details */
   .project-details {
     max-height: 0;
     opacity: 0;
@@ -731,7 +716,6 @@
   .project-card:hover .project-hud { opacity: 1; transform: translateY(0); }
   .project-hud-line { display: block; }
 
-  /* SKILLS — RADAR CHART */
   #skills { border-top: 1px solid var(--border); background: var(--dark2); }
   .skills-layout {
     display: grid;
@@ -818,7 +802,6 @@
     letter-spacing: 2px;
   }
 
-  /* TIMELINE — INTERACTIVE */
   #timeline { border-top: 1px solid var(--border); }
   .timeline { position: relative; padding-left: 40px; }
   .timeline::before {
@@ -900,7 +883,6 @@
     font-weight: 300;
   }
 
-  /* TESTIMONIALS */
   #testimonials { border-top: 1px solid var(--border); background: var(--dark2); }
   .testimonials-grid {
     display: grid;
@@ -993,7 +975,6 @@
   }
   .testimonial-card:hover .testimonial-noise { opacity: 1; }
 
-  /* CONTACT */
   #contact { border-top: 1px solid var(--border); }
   .contact-inner {
     display: grid;
@@ -1019,7 +1000,6 @@
     margin-bottom: 48px;
   }
 
-  /* CONTACT FORM */
   .contact-form { display: flex; flex-direction: column; gap: 16px; }
   .form-field {
     position: relative;
@@ -1184,7 +1164,6 @@
   #sound-toggle:hover { border-color: var(--acid); color: var(--acid); }
   #sound-toggle.muted { opacity: 0.4; }
 
-  /* BOOT */
   #boot {
     position: fixed; inset: 0;
     background: var(--dark);
@@ -1229,7 +1208,6 @@
 
   nav a.active { color: var(--acid); }
 
-  /* KONAMI EASTER EGG */
   #konami-overlay {
     position: fixed; inset: 0;
     background: var(--dark);
@@ -1277,7 +1255,6 @@
   }
   .konami-close:hover { color: var(--acid); border-color: var(--acid); }
 
-  /* PARALLAX helpers */
   .parallax-layer { will-change: transform; }
 
   @media (max-width: 900px) {
@@ -1337,7 +1314,6 @@
 <canvas id="rain-canvas"></canvas>
 <button id="sound-toggle" title="Toggle sound">♪</button>
 
-<!-- KONAMI EASTER EGG -->
 <div id="konami-overlay">
   <div class="konami-title">// NEURAL OVERRIDE DETECTED //</div>
   <div class="konami-sub">ACCESSING CLASSIFIED CORTEX MODULE — SNAKE.EXE</div>
@@ -1387,7 +1363,6 @@
 
 <main>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <canvas id="neural-canvas"></canvas>
   <div class="corner-tl"></div>
@@ -1425,7 +1400,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-header reveal">
     <span class="section-num">// 01</span>
@@ -1458,7 +1432,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-header reveal">
     <span class="section-num">// 02</span>
@@ -1571,7 +1544,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-header reveal">
     <span class="section-num">// 03</span>
@@ -1635,7 +1607,6 @@
   </div>
 </section>
 
-<!-- TIMELINE -->
 <section id="timeline">
   <div class="section-header reveal">
     <span class="section-num">// 04</span>
@@ -1703,7 +1674,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="section-header reveal">
     <span class="section-num">// 05</span>
@@ -1745,7 +1715,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-header reveal">
     <span class="section-num">// 06</span>
@@ -1794,9 +1763,6 @@
 </footer>
 
 <script>
-// ═══════════════════════════════════════
-// BOOT SEQUENCE
-// ═══════════════════════════════════════
 const bootLines = [
   ['BIOS CHECK','OK'],['NEURAL INTERFACE DETECTED','OK'],
   ['LOADING CORTEX BRIDGE DRIVERS v4.7.2','OK'],
@@ -1836,9 +1802,6 @@ function runBoot() {
 }
 runBoot();
 
-// ═══════════════════════════════════════
-// TYPING EFFECT
-// ═══════════════════════════════════════
 const typingPhrases = [
   'COGNITIVE SYSTEMS // SYNTHETIC INTELLIGENCE // BIO-MESH ARCHITECTURE',
   'DESIGNING THE INVISIBLE // SHAPING THE BIO-DIGITAL FRONTIER',
@@ -1862,18 +1825,12 @@ function startTyping() {
   tick();
 }
 
-// ═══════════════════════════════════════
-// SCROLL PROGRESS
-// ═══════════════════════════════════════
 const scrollBar = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
   const total = document.body.scrollHeight - window.innerHeight;
   scrollBar.style.width = (window.scrollY / total * 100) + '%';
 }, {passive: true});
 
-// ═══════════════════════════════════════
-// CURSOR + TRAIL
-// ═══════════════════════════════════════
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -1926,9 +1883,6 @@ document.querySelectorAll('a,button,.project-card,.capability-item,.contact-link
   el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
 });
 
-// ═══════════════════════════════════════
-// CLOCK
-// ═══════════════════════════════════════
 function updateClock() {
   const now = new Date();
   const t = [now.getHours(),now.getMinutes(),now.getSeconds()].map(n=>String(n).padStart(2,'0')).join(':');
@@ -1938,9 +1892,6 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
-// ═══════════════════════════════════════
-// NEURAL CANVAS
-// ═══════════════════════════════════════
 const canvas = document.getElementById('neural-canvas');
 const ctx = canvas.getContext('2d');
 let nodes = [], W, H;
@@ -1993,9 +1944,6 @@ function drawNeural() {
 }
 drawNeural();
 
-// ═══════════════════════════════════════
-// MATRIX RAIN
-// ═══════════════════════════════════════
 const rain = document.getElementById('rain-canvas');
 const rctx = rain.getContext('2d');
 let rW, rH, drops = [];
@@ -2025,9 +1973,6 @@ function drawRain() {
 }
 setInterval(drawRain, 55);
 
-// ═══════════════════════════════════════
-// PARALLAX
-// ═══════════════════════════════════════
 window.addEventListener('scroll', () => {
   const sy = window.scrollY;
   document.querySelectorAll('.parallax-layer').forEach(el => {
@@ -2036,9 +1981,6 @@ window.addEventListener('scroll', () => {
   });
 }, {passive:true});
 
-// ═══════════════════════════════════════
-// ASCII PORTRAIT
-// ═══════════════════════════════════════
 const asciiArt = `
      .:::::::::.
    .::::::::::::::.
@@ -2063,9 +2005,6 @@ LV-Ω-0094 // VERIFIED
 `.trim();
 document.getElementById('ascii-portrait').textContent = asciiArt;
 
-// ═══════════════════════════════════════
-// RADAR CHART
-// ═══════════════════════════════════════
 const radarCanvas = document.getElementById('radar-canvas');
 const rc = radarCanvas.getContext('2d');
 const radarSkills = [
@@ -2084,7 +2023,6 @@ function drawRadar(progress) {
   const n = radarSkills.length;
   rc.clearRect(0,0,radarCanvas.width,radarCanvas.height);
 
-  // Grid rings
   for (let r=1;r<=5;r++) {
     rc.beginPath();
     for (let i=0;i<n;i++) {
@@ -2099,7 +2037,6 @@ function drawRadar(progress) {
     rc.stroke();
   }
 
-  // Spokes
   for (let i=0;i<n;i++) {
     const angle = (i/n)*Math.PI*2 - Math.PI/2;
     rc.beginPath();
@@ -2108,7 +2045,6 @@ function drawRadar(progress) {
     rc.strokeStyle = 'rgba(0,255,178,0.12)';
     rc.lineWidth = 1;
     rc.stroke();
-    // Label
     const lx = CX+Math.cos(angle)*(R+20);
     const ly = CY+Math.sin(angle)*(R+20);
     rc.fillStyle = 'rgba(200,232,216,0.5)';
@@ -2118,7 +2054,6 @@ function drawRadar(progress) {
     rc.fillText(radarSkills[i].label.toUpperCase(), lx, ly);
   }
 
-  // Fill
   rc.beginPath();
   for (let i=0;i<n;i++) {
     const angle = (i/n)*Math.PI*2 - Math.PI/2;
@@ -2134,7 +2069,6 @@ function drawRadar(progress) {
   rc.lineWidth = 1.5;
   rc.stroke();
 
-  // Points
   radarSkills.forEach((s,i) => {
     const angle = (i/n)*Math.PI*2 - Math.PI/2;
     const val = s.value * progress;
@@ -2151,15 +2085,11 @@ function drawRadar(progress) {
     requestAnimationFrame(() => drawRadar(Math.min(1, radarAnim)));
   }
 }
-// Start radar when in view
 const radarObs = new IntersectionObserver(entries => {
   if(entries[0].isIntersecting) { radarAnim=0; drawRadar(0); radarObs.disconnect(); }
 }, {threshold:0.3});
 radarObs.observe(radarCanvas);
 
-// ═══════════════════════════════════════
-// TIMELINE ACCORDION
-// ═══════════════════════════════════════
 document.querySelectorAll('.timeline-header').forEach(header => {
   header.addEventListener('click', () => {
     const item = header.parentElement;
@@ -2170,9 +2100,6 @@ document.querySelectorAll('.timeline-header').forEach(header => {
   });
 });
 
-// ═══════════════════════════════════════
-// TESTIMONIALS DECRYPT ANIMATION
-// ═══════════════════════════════════════
 const CHARS2 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*<>{}[]|';
 
 function animateDecrypt(card) {
@@ -2199,7 +2126,6 @@ function animateDecrypt(card) {
   step();
 }
 
-// Generate noise text
 function makeNoise(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -2216,9 +2142,6 @@ const testimonialObs = new IntersectionObserver(entries => {
 }, {threshold: 0.3});
 document.querySelectorAll('.testimonial-card').forEach(c => testimonialObs.observe(c));
 
-// ═══════════════════════════════════════
-// CONTACT FORM
-// ═══════════════════════════════════════
 const form = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
 const submitLabel = document.getElementById('submit-label');
@@ -2246,9 +2169,6 @@ form.addEventListener('submit', () => {
   }, 2000);
 });
 
-// ═══════════════════════════════════════
-// DARK/LIGHT MODE
-// ═══════════════════════════════════════
 const modeBtn = document.getElementById('mode-toggle');
 let isLight = false;
 modeBtn.addEventListener('click', () => {
@@ -2258,9 +2178,6 @@ modeBtn.addEventListener('click', () => {
   beep(isLight ? 440 : 880, 0.1, 0.04);
 });
 
-// ═══════════════════════════════════════
-// SCROLL REVEAL
-// ═══════════════════════════════════════
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
@@ -2268,7 +2185,6 @@ const revealObs = new IntersectionObserver(entries => {
 }, {threshold: 0.1});
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// ACTIVE NAV
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('nav a[href^="#"]');
 const navObs = new IntersectionObserver(entries => {
@@ -2290,9 +2206,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ═══════════════════════════════════════
-// SOUND
-// ═══════════════════════════════════════
 let soundOn = true;
 const AudioCtx = window.AudioContext || window.webkitAudioContext;
 let actx;
@@ -2326,9 +2239,6 @@ soundBtn.addEventListener('click',()=>{
   if(soundOn) beep(1000,0.1,0.05);
 });
 
-// ═══════════════════════════════════════
-// KONAMI CODE + SNAKE GAME
-// ═══════════════════════════════════════
 const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
 let konamiIdx = 0;
 let snakeInterval = null;
@@ -2390,16 +2300,13 @@ function startSnake() {
     } else { snake.pop(); }
 
     sctx.fillStyle='rgba(3,4,8,0.95)'; sctx.fillRect(0,0,sc.width,sc.height);
-    // Grid
     sctx.strokeStyle='rgba(0,255,178,0.05)'; sctx.lineWidth=0.5;
     for(let x=0;x<COLS;x++){sctx.beginPath();sctx.moveTo(x*CELL,0);sctx.lineTo(x*CELL,sc.height);sctx.stroke();}
     for(let y=0;y<ROWS;y++){sctx.beginPath();sctx.moveTo(0,y*CELL);sctx.lineTo(sc.width,y*CELL);sctx.stroke();}
-    // Snake
     snake.forEach((s,i)=>{
       sctx.fillStyle=i===0?'#00FFB2':'rgba(0,255,178,0.5)';
       sctx.fillRect(s.x*CELL+1,s.y*CELL+1,CELL-2,CELL-2);
     });
-    // Food
     sctx.fillStyle='#FF003C';
     sctx.fillRect(food.x*CELL+2,food.y*CELL+2,CELL-4,CELL-4);
 
