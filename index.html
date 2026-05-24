@@ -26,6 +26,10 @@
   }
 
   html { scroll-behavior: smooth; }
+  html::-webkit-scrollbar { width: 4px; }
+  html::-webkit-scrollbar-track { background: #030408; }
+  html::-webkit-scrollbar-thumb { background: rgba(0,255,178,0.2); border-radius: 2px; }
+  * { scrollbar-width: thin; scrollbar-color: rgba(0,255,178,0.2) #030408; }
 
   body {
     background: var(--dark);
