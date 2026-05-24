@@ -2261,6 +2261,12 @@ document.getElementById('konami-close').addEventListener('click', () => {
   document.getElementById('konami-overlay').classList.remove('active');
   if (snakeInterval) clearInterval(snakeInterval);
 });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.getElementById('konami-overlay').classList.contains('active')) {
+    document.getElementById('konami-overlay').classList.remove('active');
+    if (snakeInterval) clearInterval(snakeInterval);
+  }
+});
 
 function startSnake() {
   const sc = document.getElementById('snake-canvas');
