@@ -85,8 +85,12 @@
     background: radial-gradient(circle at 40% 40%, rgba(0,122,85,0.12), rgba(0,112,160,0.06), transparent 70%);
     border-color: rgba(0,122,85,0.1);
   }
-  body.light-mode #neural-canvas { opacity: 0.25; }
-  body.light-mode body::before { opacity: 0.03; }
+body.light-mode #neural-canvas { opacity: 0.25; }
+body.light-mode body::before { opacity: 0.03; }
+
+body.light-mode .cursor { mix-blend-mode: multiply; }
+body.light-mode .cursor-ring { mix-blend-mode: multiply; }
+body.light-mode .trail-dot { mix-blend-mode: multiply; }
 
   html { scroll-behavior: smooth; cursor: none; }
   html::-webkit-scrollbar { width: 4px; }
